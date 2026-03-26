@@ -1,0 +1,197 @@
+.footer-container {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* Safety net against horizontal scroll */
+}
+
+.footer-content {
+  width: 95%;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 60px 50px 30px; /* Reduced from 80px to prevent overflow */
+  border-radius: 40px;
+  margin: 0 auto;
+  box-sizing: border-box; /* Ensures padding doesn't add to width */
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.brand-logo {
+  font-size: 36px;
+  line-height: 0.9;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.brand-logo span {
+  display: block;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #333;
+  transform: translateY(-3px);
+}
+
+/* Links Grid */
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 40px; /* Reduced gap from 60px for better fit */
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #fff;
+  white-space: nowrap; /* Prevents text breaking weirdly */
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-column ul li a:hover {
+  color: #ffffff;
+}
+
+.footer-divider {
+  border: 0;
+  border-top: 1px solid #333;
+  margin-bottom: 25px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #777;
+}
+
+.legal-links {
+  display: flex;
+  gap: 20px;
+}
+
+.legal-links a {
+  color: #777;
+  text-decoration: none;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+@media (max-width: 1100px) {
+  .footer-links-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 40px 20px;
+    border-radius: 24px;
+    width: 95%;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px; /* Reduced gap */
+  }
+
+  .brand-logo {
+    font-size: 26px;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .social-links {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* 3-Column Grid for Links to reduce height */
+  .footer-links-grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px 15px;
+    width: 100%;
+  }
+
+  .footer-column h4 {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #fff;
+    border-bottom: 1px solid #333; /* Subtle underline for structure */
+    padding-bottom: 5px;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 8px; /* Tighter spacing */
+  }
+
+  .footer-column ul li a {
+    font-size: 12px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+  }
+}
+
+/* Fix for narrow phones (iPhone SE, etc.) */
+@media (max-width: 480px) {
+  .footer-links-grid {
+    /* Keeps it as 2 columns on very narrow screens so text doesn't overlap */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+  }
+  
+  /* Optional: Hide less important columns on mobile if necessary */
+  /* .footer-column:nth-child(4) { display: none; } */
+}

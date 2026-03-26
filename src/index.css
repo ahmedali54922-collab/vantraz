@@ -1,0 +1,110 @@
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* 1. CSS Reset & Box Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 2. Global Variables */
+:root {
+  --primary-orange: #ff5a1f;
+  --text-dark: #222222;
+  --text-gray: #666666;
+  --bg-light: #f5f5f5;
+  --transition-speed: 0.3s;
+
+  /* Additional shared variables used across component CSS */
+  --bg: #ffffff;
+  --muted: #777;
+  --dark: #222;
+  --accent: #ff5a1f;
+  --card-bg: #f7f7f7;
+  --border: #e5e5e5;
+}
+
+/* 3. Base Styles */
+body {
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+/* 4. Typography Defaults */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-speed);
+}
+
+ul {
+  list-style: none;
+}
+
+/* 5. Utility Classes */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 6. Responsive Media Queries */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    width: 92%;
+  }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+}
+
+/* Mobile Large (max-width: 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  .container {
+    width: 95%;
+  }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.4rem; }
+}
+
+/* Mobile Small (max-width: 480px) */
+@media (max-width: 480px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.2rem; }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

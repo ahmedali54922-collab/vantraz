@@ -1,0 +1,136 @@
+.navbar {
+  width: 95%;
+  margin: 10px auto;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.vantra {
+  color: #222;
+}
+
+.labz {
+  color: #ff6a00;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+/* Existing Desktop Styles remain... */
+
+.menu-icon {
+  display: none; /* Hidden on desktop */
+  font-size: 24px;
+  cursor: pointer;
+  color: #222;
+}
+
+/* Ensure navbar is a positioning context so absolute mobile menu positions relative to it */
+.navbar {
+  position: relative;
+}
+
+/* Mobile Responsive Media Query */
+/* Universal Mobile Overrides */
+@media (max-width: 768px) {
+  .navbar {
+    width: 95%; /* Keeps the consistent layout with your Home/Footer design */
+    padding: 10px 15px;
+    z-index: 1000;
+  }
+
+  .logo {
+    /* Fluid font size for the logo */
+    font-size: clamp(18px, 5vw, 22px); 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: clamp(20px, 6vw, 26px); /* Scales icon size for better touch area */
+    padding: 5px;
+  }
+
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background: white;
+    
+    /* Improved mobile styling */
+    border: 1px solid var(--border); 
+    border-top: none;
+    padding: 30px 10px;
+    gap: 25px;
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05); /* Adds depth when open */
+    border-radius: 0 0 15px 15px; /* Matches the rounded aesthetic of your cards */
+    z-index: 1100; /* ensure it's above page content */
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: slideDown 0.3s ease-out; /* Smooth entry for mobile users */
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 18px; /* Standard readable mobile font size */
+    font-weight: 500;
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+  }
+}
+
+/* Animation for a premium feel */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Specific fix for very small phones (under 360px) */
+@media (max-width: 360px) {
+  .navbar {
+    padding: 8px 10px;
+  }
+  .vantra, .labz {
+    font-size: 16px;
+  }
+}

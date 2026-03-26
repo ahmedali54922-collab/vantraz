@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* This forces the Footer to the bottom if the page is short */
+footer {
+  margin-top: auto;
+}
